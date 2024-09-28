@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <!-- <link rel="stylesheet" href="/static/css/bootstrap.min.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <title>SANO LAB</title>
+</head>
+
+<body>
+    <article>
+        <div class="side">
+            <a href="/">
+            <img src={{url_for('static', filename='images/icon_books.png' )}} class="side-icon">
+            <p class="side-title-logo">Sano Lab</p>
+            </a>
+            <menu class="side-menu">
+                <h3>Tool</h3>
+                <li><a href="/densuke-analyzer">Densuke analyzer</a></li>
+                <li><a href="/">Ccfolia log converter</a></li>
+                <h3><a href="https://sn-scenario.booth.pm/" target="_blank">Booth Link</a></h3>
+            </menu>
+        </div>
+        <div class="content">
+            
+            {% block content %}
+            {% endblock %}
+        </div>
+    </article>
+
+</body>
+
+</html>

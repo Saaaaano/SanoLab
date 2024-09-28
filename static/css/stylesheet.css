@@ -1,0 +1,230 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+/* mobile
+   ----------------------------------------------------------------- */
+/* Reset
+   ----------------------------------------------------------------- */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Base
+   ----------------------------------------------------------------- */
+body {
+  background-color: #E2E2E2;
+  color: #3e3a3a;
+  height: 100%;
+  font-family: "游ゴシック", sans-serif;
+  height: 100%;
+  min-height: 100%;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 auto;
+  background-color: #E2E2E2;
+  text-align: center;
+  color: #3e3a3a;
+}
+@media screen and (max-width: 767px) {
+  body {
+    width: 100%;
+  }
+}
+body h1 {
+  font-size: 30px;
+}
+
+html {
+  height: 100%;
+  background-color: rgba(234, 234, 234, 0.5254901961);
+}
+
+/* ==========================================================================
+   Layout
+    プロジェクト共通のコンテナーブロックのスタイルを定義
+    ページ単位で唯一の存在である要素となる
+   ========================================================================== */
+/* Header
+   ----------------------------------------------------------------- */
+#header {
+  background-color: #3e3a3a;
+  color: #ced7dc;
+  padding: 5px 20px;
+  position: fixed;
+  top: 0px;
+  width: 960px;
+  margin: 0 auto;
+  z-index: 1000;
+}
+@media screen and (max-width: 767px) {
+  #header {
+    width: 100%;
+    padding: 5px 5px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #header a {
+    text-align: right;
+    padding-right: 25px;
+  }
+}
+#header #header__pagetitle {
+  text-align: left;
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  #header #header__pagetitle {
+    margin-right: 5px;
+  }
+}
+#header #header__topbtn {
+  text-align: right;
+}
+
+.side {
+  background-color: #ced7dc;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+.side .side-icon {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+}
+.side .side-title-logo {
+  margin-top: 0px;
+  font-family: "Julius Sans One";
+}
+.side .side-menu {
+  margin-top: 50px;
+  margin-left: 5px;
+  text-align: left;
+}
+.side .side-menu li {
+  list-style-type: none;
+  margin-left: 15px;
+}
+.side .side-menu li ::before {
+  content: "- ";
+}
+.side .side-menu h3 {
+  margin-top: 15px;
+  font-family: "Julius Sans One";
+}
+.side a {
+  text-decoration: none;
+  color: #3e3a3a;
+}
+.side a:visited {
+  color: #3e3a3a;
+}
+.side a:hover {
+  -webkit-text-decoration: underline solid #3e3a3a 1px;
+          text-decoration: underline solid #3e3a3a 1px;
+}
+
+.content {
+  text-align: center;
+  margin-left: 10px;
+  width: 80%;
+}
+
+article {
+  display: flex;
+  height: 100%;
+}
+
+/* ==========================================================================
+   Object
+   プロジェクトにおける繰り返されるビジュアルパターンをすべてObjectと定義
+   ========================================================================== */
+/* Component
+    再利用できるパターンとして、小さな単位のモジュールを定義
+   ----------------------------------------------------------------- */
+/**
+ * default button
+ */
+.defo-btn {
+  background-color: #ced7dc;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 2px #3e3a3a;
+  padding: 2px 5px;
+  color: #3e3a3a;
+}
+.defo-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.5px;
+}
+
+/**
+ * default input
+ */
+.defo-input {
+  margin-bottom: 30px;
+  border-color: #ced7dc;
+  border-radius: 2px;
+}
+
+/* Project
+    いくつかのComponentと、それに該当しない要素によって構成されるものを定義
+    例：記事一覧や、ユーザープロフィール、画像ギャラリーなどコンテンツを構成する要素など
+   ----------------------------------------------------------------- */
+/**
+ * トップページのタイトルロゴ
+ */
+.title-logo {
+  margin-top: 20px;
+  font-family: "Julius Sans One";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+@media screen and (max-width: 767px) {
+  .title-logo {
+    margin-left: 0px;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .title-logo img {
+    width: 100%;
+  }
+}
+
+.emphasis {
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, #ced7dc 70%);
+}
+
+.caption {
+  font-size: 14px;
+}
+
+/**
+ * トップページに記載する注意事項
+ */
+.readme {
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: left;
+  font-size: 85%;
+}
+
+/**
+ *  伝助系
+ */
+.url-form {
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 30px;
+}
+.url-form input {
+  width: 90%;
+  height: 20px;
+  font-family: "Courier New", Courier, monospace;
+  margin: 5px 0 5px 0;
+}/*# sourceMappingURL=stylesheet.css.map */

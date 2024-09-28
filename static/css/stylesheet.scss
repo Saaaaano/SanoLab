@@ -1,0 +1,239 @@
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+$basecolor:#E2E2E2;
+$subcolor:#3e3a3a;
+$pointcolor:#ced7dc;
+$mobile-width:767px;    //スマホサイズ
+$point-font:'Julius Sans One';
+
+/* mobile
+   ----------------------------------------------------------------- */
+@mixin mobile{
+    @media screen and (max-width: $mobile-width){
+        @content;
+    }
+}
+
+/* Reset
+   ----------------------------------------------------------------- */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Base
+   ----------------------------------------------------------------- */
+body{
+    background-color: $basecolor;
+    color: $subcolor;
+    height: 100%;
+    font-family: '游ゴシック', sans-serif;
+    height: 100%;
+    min-height: 100%;
+    width:1000px;
+    margin: 0 auto;
+    padding: 0 auto;
+    background-color: $basecolor;
+    text-align: center;
+    color: $subcolor;
+    @include mobile{
+        width:100%;
+    }
+    h1{
+        font-size: 30px;
+    }
+}
+html{
+    height: 100%;
+    background-color: #eaeaea86;
+}
+
+/* ==========================================================================
+   Layout
+    プロジェクト共通のコンテナーブロックのスタイルを定義
+    ページ単位で唯一の存在である要素となる
+   ========================================================================== */
+
+/* Header
+   ----------------------------------------------------------------- */  
+#header{
+    background-color: $subcolor;
+    color: $pointcolor;
+    padding: 5px 20px;
+    position: fixed;
+    top:0px;
+    width: 960px;
+    margin: 0 auto;
+    z-index: 1000;
+    @include mobile{
+        width: 100%;
+        padding: 5px 5px;
+    }
+    a{
+        @include mobile{
+            text-align: right;
+            padding-right: 25px;
+        }
+    }
+    #header__pagetitle{
+        text-align: left;
+        float: left;
+        @include mobile{
+            margin-right: 5px;
+        }
+    }
+    #header__topbtn{
+        text-align: right;           
+    }
+}
+// メニュー用のサイドバー
+.side {
+        background-color: $pointcolor;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+    .side-icon{
+        margin-top: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    .side-title-logo{
+        margin-top: 0px;
+        font-family: $point-font;
+    }
+    .side-menu{
+        margin-top: 50px;
+        margin-left: 5px;
+        text-align: left;
+        li{
+            list-style-type: none;
+            margin-left: 15px;
+            ::before{
+                content:"- "
+            }
+        }
+        h3{
+            margin-top: 15px;
+            font-family: $point-font;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $subcolor;
+
+        &:visited {
+            color: $subcolor;
+        }
+
+        &:hover {
+            text-decoration: underline solid $subcolor 1px;
+        }
+    }
+    }
+.content {
+    text-align: center;
+    margin-left: 10px;
+    width: 80%;
+    // box-shadow: 0px 0px 10px 10px $basecolor;
+}
+article{
+    display: flex;
+    height: 100%;
+}
+/* ==========================================================================
+   Object
+   プロジェクトにおける繰り返されるビジュアルパターンをすべてObjectと定義
+   ========================================================================== */
+
+/* Component
+    再利用できるパターンとして、小さな単位のモジュールを定義
+   ----------------------------------------------------------------- */
+
+/**
+ * default button
+ */
+.defo-btn{
+    background-color: $pointcolor;
+    border:none;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 2px $subcolor;
+    padding: 2px 5px;
+    color: $subcolor;
+    &:active {
+        box-shadow: none;
+        position: relative;
+        top: 0.5px;
+    }
+}
+
+/**
+ * default input
+ */
+.defo-input{
+    margin-bottom: 30px;
+    border-color: $pointcolor;
+    border-radius: 2px;
+}
+
+
+
+/* Project
+    いくつかのComponentと、それに該当しない要素によって構成されるものを定義
+    例：記事一覧や、ユーザープロフィール、画像ギャラリーなどコンテンツを構成する要素など
+   ----------------------------------------------------------------- */
+/**
+ * トップページのタイトルロゴ
+ */
+.title-logo {
+    margin-top: 20px;
+    font-family: $point-font;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    @include mobile{
+        margin-left: 0px;
+        padding: 0px;
+    }
+    img{
+        @include mobile{
+            width: 100%;
+        }
+    }
+}
+.emphasis{
+    background-image: linear-gradient(
+        rgb(0 0 0 / 0) 70%,
+        $pointcolor 70%
+    );
+}
+.caption{
+    font-size: 14px;
+}
+
+/**
+ * トップページに記載する注意事項
+ */
+.readme{
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 85%;
+}
+
+/**
+ *  伝助系
+ */
+.url-form{
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 30px;
+    // display: flex;
+    input{
+        width: 90%;
+        height: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 5px 0 5px 0;
+    }
+    
+}

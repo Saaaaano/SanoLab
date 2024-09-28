@@ -1,0 +1,41 @@
+<!-- base.htmlに呼び出し -->
+{% extends "base.html" %}
+<!-- 以下に書かれたものをbase.html内の同じ変数の位置に上書きする -->
+{% block content %}
+    <h1 class="title-logo"><span class="emphasis">Densuke analyzer</span></h1>
+    <div class="url-form">
+        <form method="post" action="/url-send">
+            <label class="">伝助のURLを入力してEnterを押してください。<br></label>
+            <input type="text" name="url-input" autocomplete="off"></form>
+            <!-- <input type="submit" class="defo-btn sub-btn" value="解析する"> -->
+        </form>
+        <div>
+            {{expl}}
+        </div>
+        <form>
+            <div>
+                <input type="checkbox"> ×の行を表示しない <label></label>
+            </div>
+        </form>
+        <select multiple>
+            {% for name in names %}
+                <option value={{name}}>{{name}}</option>
+            {% endfor %}
+        </select>
+        <table>
+            <tr>
+                <th></th>
+                {% for name in names %}
+                    <th>{{name}}</th>
+                {% endfor %}
+            </tr>
+            {% for line in lines %}
+            <tr>
+                {% for s in line %}
+                <td>{{s}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
